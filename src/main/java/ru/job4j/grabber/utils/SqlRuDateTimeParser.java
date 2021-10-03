@@ -1,5 +1,6 @@
 package ru.job4j.grabber.utils;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
@@ -23,7 +24,7 @@ public class SqlRuDateTimeParser implements DateTimeParser {
     );
 
     @Override
-    public LocalDateTime parse(String parse) {
+    public LocalDate parse(String parse) {
         String[] date = parse.split(" ");
         for (String format : MONTHS.keySet()) {
             if (date[1].equals(format)) {
@@ -34,7 +35,7 @@ public class SqlRuDateTimeParser implements DateTimeParser {
         date[2] = par[0];
         String result = String.format("%s-%s-%s-%s", date[0], date[1], date[2], date[3]);
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yy HH:mm");
-        return LocalDateTime.parse(result, dateTimeFormatter);
+        return LocalDate.parse(result, dateTimeFormatter);
     }
 
     public static void main(String[] args) {

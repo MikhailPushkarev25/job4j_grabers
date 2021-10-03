@@ -12,10 +12,14 @@ import java.util.List;
 
 public class SqlRuParse implements Parse {
 
-    private final DateTimeParser dateTimeParser;
+    private DateTimeParser dateTimeParser;
 
     public SqlRuParse(DateTimeParser dateTimeParser) {
         this.dateTimeParser = dateTimeParser;
+    }
+
+    public SqlRuParse() {
+
     }
 
     @Override

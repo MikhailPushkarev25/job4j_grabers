@@ -6,4 +6,5 @@ public interface Store {
 
     void add(Food food, Long num);
     List<Food> get();
+    void remove(Food food);
 }

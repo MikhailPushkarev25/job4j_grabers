@@ -19,4 +19,12 @@ public class ControlQuality {
             store.add(food, calculate(food));
         }
    }
+
+   public void resort(Food food) {
+        List<Food> foods = new ArrayList<>();
+        for (Store store : stores) {
+            foods.addAll(store.get());
+        }
+        distribute(food);
+   }
 }
